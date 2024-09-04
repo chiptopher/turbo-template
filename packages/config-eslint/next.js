@@ -1,5 +1,6 @@
 const { resolve } = require("node:path");
 
+const base = require("./base.js");
 const project = resolve(process.cwd(), "tsconfig.json");
 
 /** @type {import("eslint").Linter.Config} */
@@ -17,7 +18,7 @@ module.exports = {
   env: {
     node: true,
   },
-  plugins: ["only-warn"],
+  plugins: ["only-warn", ...base.plugins],
   settings: {
     "import/resolver": {
       typescript: {
@@ -31,4 +32,5 @@ module.exports = {
     "node_modules/",
   ],
   overrides: [{ files: ["*.js?(x)", "*.ts?(x)"] }],
+  rules: { ...base.rules },
 };
