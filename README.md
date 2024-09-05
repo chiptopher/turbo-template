@@ -7,5 +7,5 @@ Starter with the stuff I like to use.
 Run the following command:
 
 ```sh
-npx create-turbo@latest -e with-prisma
+npx create-turbo@latest -e https://github.com/chiptopher/turbo-template
 ```
